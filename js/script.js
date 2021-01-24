@@ -75,24 +75,28 @@ study(cats);
 
 // question 8
 
-const container = document.querySelector(".cat-container");
-
-console.log(container);
-
-let html = "";
-
 function createCats(cats) {
-    for (let i = 0; i < cats.length; i++);
 
-    html += `<div class="pet">
-        <h5>${cats[i].name}</h5>
-        <p>Age: ${cats[i].age}</p>
-        </div>
-    `;
+    let html = "";
 
-    console.log(html);
+    for (let i = 0; i < cats.length; i++) {
+
+        let ageCat = "Age unknown";
+        
+        if (cats[i].age) {
+            ageCat = cats[i].age;
+        }
+
+        html += `<div class=".cat-container">
+                    <h5>${cats[i].name}</h5>
+                    <p> Age: ${ageCat}</p>
+                </div>`;
+    }
+
+    return html;
 }
 
-container.innerHTML = html;
+const newHTML = createCats(cats);
 
-// Here nothing comes up in my page in Live Server. Dont know whats wrong, so i wont come any longer than this.
+const catContainer = document.querySelector(".cat-container");
+catContainer.innerHTML = newHTML;
