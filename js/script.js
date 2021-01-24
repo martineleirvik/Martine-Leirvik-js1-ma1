@@ -65,11 +65,12 @@ resultsContainer.style.backgroundColor = "yellow";
 // question 7
 
 function study(list) {
-    for (var i = 1; i <= 0; i++){
-        console.log(i);
+    for (let i = 0; i < list.length; i++){
+        console.log(list[i].name);
     }
-
 }
+
+study(cats);
 
 
 // question 8
